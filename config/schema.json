@@ -11,6 +11,10 @@
             "default": true,
             "description": "Global override to disable ALL startup apps."
         },
+        "cwd": {
+            "type": "string",
+            "description": "Optional default working directory for launched processes where no working directory is specified. (Defaults to the user's home directory)"
+        },
         "run": {
             "type": "array",
             "description": "List of startup apps or commands",
