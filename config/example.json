@@ -1,0 +1,17 @@
+{
+    "$schema": "https://raw.githubusercontent.com/thekliko/StartupAppLauncher/master/config/schema.json",
+    "active": true,
+    "run": [
+        {
+            "active": true,
+            "payload": "cmd /c taskmgr",
+            "method": "os.system"
+        },
+        {
+            "active": true,
+            "payload": "start cmd",
+            "method": "os.system",
+            "wait": 5000
+        }
+    ]
+}

@@ -1,0 +1,55 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "StartupAppLauncher Configuration",
+    "properties": {
+        "active": {
+            "type": "boolean",
+            "default": true,
+            "description": "Global override to disable ALL startup apps."
+        },
+        "run": {
+            "type": "array",
+            "description": "List of startup apps or commands",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "active": {
+                        "type": "boolean",
+                        "default": true,
+                        "description": "Whether or not to run this app or command."
+                    },
+                    "payload": {
+                        "type": "string",
+                        "description": "The app or command to run."
+                    },
+                    "method": {
+                        "type": "string",
+                        "enum": ["os.startfile", "os.system", "subprocess.Popen"],
+                        "description": "The execution method for the app or command."
+                    },
+                    "wait": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "default": 0,
+                        "description": "Optional time to wait before running the app or command (non-blocking, time is in milliseconds)."
+                    },
+                    "cwd": {
+                        "type": "string",
+                        "description": "Optional working directory for the launched process."
+                    },
+                    "args": {
+                        "type": "array",
+                        "description": "Optional list of command-line arguments.",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "required": ["active", "payload", "method"],
+                "additionalProperties": false
+            }
+        }
+    },
+    "required": ["active", "run"],
+    "additionalProperties": false
+}
