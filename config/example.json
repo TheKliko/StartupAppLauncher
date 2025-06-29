@@ -4,8 +4,8 @@
     "run": [
         {
             "active": true,
-            "payload": "cmd /c taskmgr",
-            "method": "os.system"
+            "payload": "shell:taskmgr",
+            "method": "subprocess.Popen"
         },
         {
             "active": true,
