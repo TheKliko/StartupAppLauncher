@@ -1,7 +1,7 @@
 """
 StartupAppLauncher made by TheKliko
 Source: https://github.com/TheKliko/StartupAppLauncher
-License: MIT
+License: CC0-1.0
 """
 
 
