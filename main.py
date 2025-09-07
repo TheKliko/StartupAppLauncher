@@ -178,6 +178,8 @@ class AsyncLauncher:
 def main() -> None:
     # Setup logging & log debug info
     CONFIG_DIR.mkdir(parents=True, exist_ok=True)
+    if LOG_FILE.exists():
+        LOG_FILE.unlink()
     logging.basicConfig(
         filename=LOG_FILE,
         format="%(asctime)s.%(msecs)03d [%(levelname)s] %(message)s",
